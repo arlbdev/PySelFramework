@@ -14,7 +14,7 @@ class HomePage:
     submitFormBtn = (By.XPATH, "//input[@value='Submit']")
     successMessageTxt = (By.CSS_SELECTOR, "[class*='alert-success']")
 
-    def shopItems(self):
+    def clickShopItems(self):
         self.driver.find_element(*HomePage.shop).click()
         checkOutPage = CheckOutPage(self.driver)
         return checkOutPage
