@@ -24,7 +24,7 @@ class TestOne(BaseClass):
 
         confirmPage.getConfirmCheckoutBtn().click()
 
-        log.info("Entering country name as 'united'...")
+        log.info(f"Entering country name as '{confirmPage.countrySearchKey}'...")
         confirmPage.getCountryInputField().send_keys(confirmPage.countrySearchKey)
 
         log.info("Verifying country name's existence...")
