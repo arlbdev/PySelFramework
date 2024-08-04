@@ -1,8 +1,3 @@
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-from pageObjects.CheckoutPage import CheckOutPage
-from pageObjects.ConfirmPage import ConfirmPage
 from pageObjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
