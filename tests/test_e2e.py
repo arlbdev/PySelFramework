@@ -11,10 +11,9 @@ class TestOne(BaseClass):
     def test_e2e(self):
 
         homePage = HomePage(self.driver)
-        checkOutPage = CheckOutPage(self.driver)
-        confirmPage = ConfirmPage(self.driver)
 
-        homePage.shopItems().click()
+        checkOutPage = homePage.shopItems()
+
         cards = checkOutPage.getCardTitles()
 
         i = -1
@@ -25,7 +24,7 @@ class TestOne(BaseClass):
             if cardText == "Blackberry":
                 checkOutPage.getAddToCartBtn()[i].click()
 
-        checkOutPage.getCheckoutButton().click()
+        confirmPage = checkOutPage.clickCheckOutButton()
 
         confirmPage.getConfirmCheckoutBtn().click()
         confirmPage.getCountryInputField().send_keys(confirmPage.countrySearchKey)

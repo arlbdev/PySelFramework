@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from pageObjects.CheckoutPage import CheckOutPage
 
 
 class HomePage:
@@ -9,4 +10,6 @@ class HomePage:
 
     def shopItems(self):
 
-        return self.driver.find_element(*HomePage.shop)
+        self.driver.find_element(*HomePage.shop).click()
+        checkOutPage = CheckOutPage(self.driver)
+        return checkOutPage
