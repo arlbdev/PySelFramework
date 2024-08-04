@@ -28,9 +28,7 @@ class TestOne(BaseClass):
 
         confirmPage.getConfirmCheckoutBtn().click()
         confirmPage.getCountryInputField().send_keys(confirmPage.countrySearchKey)
-        element = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located(confirmPage.countryLink)
-        )
+        self.verifyLinkPresence(confirmPage.countryName)
         confirmPage.getCountryLink().click()
         confirmPage.getTncCheckBox().click()
         confirmPage.getPurchaseBtn().click()
