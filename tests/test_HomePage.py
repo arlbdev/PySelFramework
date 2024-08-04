@@ -1,4 +1,6 @@
 import pytest
+
+from TestData.HomePageData import HomePageData
 from pageObjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
@@ -9,10 +11,10 @@ class TestHomePage(BaseClass):
 
         homePage = HomePage(self.driver)
 
-        homePage.getNameField().send_keys(getData[0])
-        homePage.getEmailField().send_keys(getData[1])
+        homePage.getNameField().send_keys(getData["firstName"])
+        homePage.getEmailField().send_keys(getData["email"])
         homePage.getSampleCheckBox().click()
-        self.selectOptionByText(homePage.getGenderForm(), getData[2])
+        self.selectOptionByText(homePage.getGenderForm(), getData["gender"])
 
         homePage.getSubmitFormBtn().click()
 
@@ -21,6 +23,6 @@ class TestHomePage(BaseClass):
         assert ("Success" in alertText)
         self.driver.refresh()
 
-    @pytest.fixture(params=[("Juan", "juandelacruz@gmail.com", "Male"), ("Jane", "janedoe@gmail.com", "Female")])
+    @pytest.fixture(params=HomePageData.test_HomePage_data)
     def getData(self, request):
         return request.param
