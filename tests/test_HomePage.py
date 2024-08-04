@@ -12,9 +12,8 @@ class TestHomePage(BaseClass):
         homePage.getNameField().send_keys("Juan")
         homePage.getEmailField().send_keys("juandelacruz@gmail.com")
         homePage.getSampleCheckBox().click()
+        self.selectOptionByText(homePage.getGenderForm(), "Male")
 
-        sel = Select(homePage.getGenderForm())
-        sel.select_by_visible_text("Male")
         homePage.getSubmitFormBtn().click()
 
         alertText = homePage.getSuccessMessageTxt().text
