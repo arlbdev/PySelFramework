@@ -25,4 +25,5 @@ def setup(request):
 
     request.cls.driver = driver
     yield
+    print("Testing completed. Please see the results.")
     driver.close()
