@@ -40,6 +40,14 @@ class TestOne(BaseClass):
         log.info("Confirming purchase...")
 
         textResult = confirmPage.getTextResult().text
-        log.info("Result: " + textResult)
 
-        assert ("Success! Thank you!" in textResult)
+        result = "Success! Thank you!" in textResult
+
+        if result:
+            log.info(f"Result: {textResult}")
+        else:
+            log.error("Result: An error has occurred. Please try again.")
+
+        assert result
+
+
