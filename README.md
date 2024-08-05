@@ -38,7 +38,7 @@ pytest --browser_name=<browser_name>
 You can also use the following to generate an html report:
 
 ```sh
-pytest --browser_name=<browser_name> --html=html.report
+pytest --browser_name=<browser_name> --html=reports.html
 ```
 
 Replace `<browser_name>` with the desired browser (`chrome`, `firefox`, or `edge`). Make sure you are in the **tests** directory.
